@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route, withRouter, Redirect} from "react-router-dom";
+import {Switch, Route, withRouter, Redirect} from "react-router-dom";
 import moment from "moment";
 import {movies, sessions} from "../db";
 import Header from "./Header";
