@@ -37,6 +37,6 @@ fs.writeFile('dbRandomSessions.js', data, 'utf8', err => {
 });
 
 // Instructions:
-// first run in a console: node dbFill.js
-// new file will be created in a current directory ("dbSessions.js")
-// then copy the content from "dbSessions.js" to "db.js"
+// first run in a console: node dbFiller-randomSessionsForMoviesDB.js
+// new file will be created in a current directory ("dbRandomSessions.js")
+// then copy the content to "db.js" (copy each list item with sessions to each movie from "movies" variable)

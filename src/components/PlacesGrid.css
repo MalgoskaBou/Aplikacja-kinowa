@@ -1,21 +1,14 @@
-.wrapper {
-    border: 2px solid orange;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-.container {
+.cinema-hall {
     width: 100%;
     margin: auto;
+    overflow: auto;
 }
 
-.grid td {
-    width: 10%;
-    height: auto;
-    text-align: center;
-    float: left;
+td {
+    width: fit-content;
+    height: fit-content;
 }
 
 table {
-    margin-top: 40px;
+    margin: 40px auto 0;
 }

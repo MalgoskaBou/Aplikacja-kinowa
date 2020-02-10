@@ -1,4 +1,3 @@
-import "./MoviesList.css";
 import React from "react";
 import Movie from "./Movie";
 

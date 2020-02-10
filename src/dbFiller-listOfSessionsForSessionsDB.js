@@ -56,6 +56,6 @@ fs.writeFile('dbSessions.js', data, 'utf8', err => {
 });
 
 // Instructions:
-// first run in a console: node dbFill.js
+// first run in a console: node dbFiller-listOfSessionsForSessionsDB.js
 // new file will be created in a current directory ("dbSessions.js")
-// then copy the content from "dbSessions.js" to "db.js"
+// then copy the content from "dbSessions.js" to "db.js" (to "sessions variable")

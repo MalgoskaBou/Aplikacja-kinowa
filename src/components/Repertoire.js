@@ -1,15 +1,13 @@
-import './Repertoire.css';
 import React from 'react';
+import moment from 'moment';
 import MoviesList from './MoviesList';
-import { movies, sessions } from "../db";
-
-const moment = require('moment');
+import './Repertoire.css';
 
 class Repertoire extends React.Component {
     state = {
-      activeDayId: 0,
-      movies: [],
-      sessions: []
+        activeDayId: 0,
+        movies: [],
+        sessions: []
     };
 
     days = [
@@ -19,18 +17,20 @@ class Repertoire extends React.Component {
         moment().add(3, "days"),
         moment().add(4, "days"),
         moment().add(5, "days"),
-        moment().add(6, "days")];
+        moment().add(6, "days")
+    ];
 
-    updateStates = (activeDayId) => {
-            // get data from sessions database
-        const sessionsForActiveDay = sessions.filter(session => {
-            return session.time.format('DD-MM-YYYY') === this.days[activeDayId].format('DD-MM-YYYY');
-        });
-        // get data from movies database
-        const sessionsForActiveDayIds = sessionsForActiveDay.map(({...session}) => session.id);
-        const moviesForActiveDay = movies.filter(movie =>
-            movie.sessions.some(sessionId => sessionsForActiveDayIds.includes(sessionId)));
-        // change the state
+    updateState = (activeDayId) => {
+        const isActiveDay = session => session.time.format('DD-MM-YYYY') === this.days[activeDayId].format('DD-MM-YYYY');
+        const sessionsForActiveDay = this.props.allSessions.filter(isActiveDay);
+
+        const sessionToId = ({...session}) => session.id;
+        const sessionsForActiveDayIds = sessionsForActiveDay.map(sessionToId);
+
+        const isSessionForActiveDay = sessionId => sessionsForActiveDayIds.includes(sessionId);
+        const movieForActiveDay = movie => movie.sessions.some(isSessionForActiveDay);
+        const moviesForActiveDay = this.props.allMovies.filter(movieForActiveDay);
+
         this.setState({
             activeDayId, 
             movies: moviesForActiveDay, 
@@ -39,18 +39,21 @@ class Repertoire extends React.Component {
     }
 
     onDayClicked = (e) => {
-        // move class "active" to clicked element
         document.getElementById(`day${this.state.activeDayId}`).classList.remove('active');
-        e.currentTarget.classList.toggle('active');
-        // get active day id
+        e.currentTarget.classList.add('active');
         const activeDayId = Number(e.currentTarget.id.replace("day", ""));
-        // get data from database and update the state
-        this.updateStates(activeDayId);   
+        this.updateState(activeDayId);   
     }
 
     componentDidMount() {
-        this.updateStates(this.state.activeDayId);
-      }
+        this.updateState(this.state.activeDayId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.allMovies !== prevProps.allMovies && this.props.allSessions !== prevProps.allSessions) {
+            this.updateState(this.state.activeDayId);
+        }
+    }
 
     renderedList = this.days.map((day, id) => {
         return (
@@ -58,7 +61,7 @@ class Repertoire extends React.Component {
                 onClick={this.onDayClicked}
                 id={"day" + id}
                 className={id === this.state.activeDayId ? "active item" : "item"}
-                style={{ cursor: "pointer", paddingLeft: "20px" }} >
+            >
                 {id === 0 ? day.format("[Today]") : day.format("dddd")}
             </div>
         );
@@ -69,8 +72,8 @@ class Repertoire extends React.Component {
             <div className="ui container">
               <div className="ui grid">
                 <div className="eight column centered row">
-                  <div className="ui text menu" style={{ padding: "40px 0" }}>
-                    <div className="header item" style={{ fontSize: "1.25em" }}>
+                  <div className="ui text menu">
+                    <div className="header item">
                       Repertoire
                     </div>
                     <div className="ui orange text right menu">

@@ -1,0 +1,84 @@
+.notfound-container {
+    position: relative;
+    height: 100vh;
+  }
+  
+.notfound-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 920px;
+    line-height: 1.4;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+.notfound-status {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+.notfound-status h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px;
+    font-size: 280px;
+    color: #eee;
+  }
+  
+  .notfound-wrapper h2 {
+    margin: 0px;
+    font-size: 46px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .notfound-wrapper p {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .notfound-wrapper a {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid transparent;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #EB7D18;
+    text-transform: uppercase;
+    transition: .2s all;
+  }
+  
+  .notfound-wrapper a:hover {
+    background-color: #fff;
+    border-color: #EB7D18;
+    color: #EB7D18;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .notfound-status h1 {
+      font-size: 160px;
+    }
+    .notfound-wrapper h2 {
+      font-size: 24px;
+    }
+    .notfound-wrapper a {
+        padding: 10px 20px;
+      }
+  }
+  

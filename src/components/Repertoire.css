@@ -1,5 +1,12 @@
-.wrapper {
-    border: 2px solid orange;
-    margin-top: 20px;
-    padding: 10px;
+.ui.text.menu div.item {
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.ui.text.menu div.ui.text.menu {
+    padding: 40px 0;
+}
+
+.ui.text.menu div.header.item {
+    font-size: 1.25em;
 }

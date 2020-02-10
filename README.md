@@ -1,6 +1,6 @@
 # Project Description
 > React application for online movie tickets booking.<br />
-To check out the app, visit the Heroku page: http://movie-seats-booking.herokuapp.com/
+To check out the app, visit [the page](https://dariaka.github.io/Aplikacja-kinowa/)
 
 ## Table of contents
 * [General info](#general-info)
@@ -19,6 +19,7 @@ The main purpose of this application is to choose a movie and buy cinema tickets
 * HTML5
 * JavaScript
 * React
+* React Router
 
 ## Setup
 ### `npm start`
@@ -26,7 +27,7 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Status
-Project is: _in progress_
+Project is: _finished_
 
 ## Copyrights
 External files used in the project:

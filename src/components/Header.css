@@ -1,8 +1,8 @@
-div.content-header {
+div.ui.grid div.content-header.content.sixteen.wide.column {
     position: absolute;
     max-width: 110px;
     max-height: 84px;
-    padding: 20px 0 !important;
+    padding: 20px 0;
     top: 20px;
 
     font-family: 'Roboto', sans-serif;
@@ -13,12 +13,12 @@ div.content-header {
     text-transform: uppercase;
 }
 
-.cinema-header {
-    font-size: 2em !important;
-    color: #EB7D18 !important;
+div.content-header div.cinema-header.ui.sub.header {
+    font-size: 2em;
+    color: #EB7D18;
 }
 
-.app-header {
-    font-size: 1.25em !important;
+div.content-header  div.app-header {
+    font-size: 1.25em;
     color: #000000;
 }

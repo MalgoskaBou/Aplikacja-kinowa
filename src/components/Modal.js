@@ -1,6 +1,6 @@
-import './Modal.css';
 import React from 'react';
 import Button from './Button';
+import './Modal.css';
 
 class Modal extends React.Component {
     state = {
@@ -22,11 +22,11 @@ class Modal extends React.Component {
 
     confirmReservation = () => {
         this.setState({ panel: 'confirmation' });
-
-        this.props.session.seatsBooked = this.props.session.seatsBooked.concat(
-            this.props.seats
-        );
     };
+
+    exitModal = () => {
+        this.props.onConfirm();
+    }
 
     renderedList = seats =>
         seats.map(seat => {
@@ -51,7 +51,7 @@ class Modal extends React.Component {
                             active={true}
                             text={'Exit'}
                             color={'#999'}
-                            onButtonClick={this.props.onConfirm}
+                            onButtonClick={this.exitModal}
                         />
                     </div>
                 </div>

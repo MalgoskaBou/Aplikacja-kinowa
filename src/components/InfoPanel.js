@@ -1,7 +1,8 @@
-import './InfoPanel.css';
 import React from 'react';
+import {Link} from "react-router-dom";
 import MovieInfo from './MovieInfo';
 import Button from './Button';
+import './InfoPanel.css';
 
 function InfoPanel(props) {
     return (
@@ -15,18 +16,20 @@ function InfoPanel(props) {
                 />
             </div>
 
-            <div style={{ padding: '0' }}>
+            <div className="selected-seats">
                 <h4>{props.session.time.format('dddd HH:mm')}</h4>
                 <p>{props.seats.length} seats selected.</p>
             </div>
 
             <div className="row">
-            <Button
-                    text={'Back to Repertoire'}
-                    active={true}
-                    color={'#999'}
-                    onButtonClick={props.onBackButtonClick}
-                />
+                <Link to="/">
+                    <Button
+                        text={'Back to Repertoire'}
+                        active={true}
+                        color={'#999'}
+                        onButtonClick={props.onBackButtonClick}
+                    />
+                </Link>
                 <Button
                     text={'Submit'}
                     active={props.seats.length ? true : false}
