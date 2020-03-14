@@ -2,6 +2,11 @@
 > React application for online movie tickets booking.<br />
 To check out the app, visit [the page](https://dariaka.github.io/Aplikacja-kinowa/)
 
+## General info
+The main purpose of this application is to choose a movie and buy cinema tickets.
+
+![](public/cinema.jpg)
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -10,9 +15,6 @@ To check out the app, visit [the page](https://dariaka.github.io/Aplikacja-kinow
 * [Status](#status)
 * [Copyrights](#copyrights)
 * [Authors](#authors)
-
-## General info
-The main purpose of this application is to choose a movie and buy cinema tickets.
 
 ## Technologies
 
