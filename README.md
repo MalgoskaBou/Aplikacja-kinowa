@@ -2,6 +2,11 @@
 > React application for online movie tickets booking.<br />
 To check out the app, visit [the page](https://dariaka.github.io/Aplikacja-kinowa/)
 
+## General info
+The main purpose of this application is to choose a movie and buy cinema tickets.
+
+![](public/cinema.jpg)
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -10,9 +15,6 @@ To check out the app, visit [the page](https://dariaka.github.io/Aplikacja-kinow
 * [Status](#status)
 * [Copyrights](#copyrights)
 * [Authors](#authors)
-
-## General info
-The main purpose of this application is to choose a movie and buy cinema tickets.
 
 ## Technologies
 
@@ -34,7 +36,7 @@ External files used in the project:
 * User Interface - https://semantic-ui.com/
 
 ## Authors
-Created by CodersCamp's members under the supervision of Małgorzata Bousoltane:
+Created by CodersCamp's members under the supervision of [@Małgorzata Bousoltane](https://github.com/MalgoskaBou):
 [@Ievgeniia Abdulina](https://github.com/IevgeniiaAbdulina)
 [@Iwona](https://github.com/Crazysh8)
 [@Daria Kawalec](https://github.com/dariaka)
